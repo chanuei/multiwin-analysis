@@ -1,6 +1,6 @@
-#Multi-window on AOSP-5.1
+# Multi-window on AOSP-5.1
 
-##1. Features:
+## 1. Features:
 
 - Add window header and frame for each application.
 - Each window can be moved, resized, switched to front/back.
@@ -9,9 +9,9 @@
   still can be moved, resized, switched to front/back.
 - Window header can be automatically shown/hidden, when maximized.
 
-##2. How to do:
+## 2. How to do:
 
-###2.0. Understand environments:
+### 2.0. Understand environments:
 
 - Frameworks:
 
@@ -104,7 +104,7 @@
   The Surface can be transparent or opaque, and also can have
   border padding.
 
-###2.1. Window header/frame:
+### 2.1. Window header/frame:
 
 - mRootContent:
 
@@ -129,7 +129,7 @@
   QQ, we can avoid them to do so, but for WeChat, it won't work,
   so we have to be sure its border always within Window frame.
 
-###2.2. Window operation:
+### 2.2. Window operation:
 
 - By changing the bounds in WMS, we can move and resize the
   application Window.
@@ -141,7 +141,7 @@
   (move, resize, or front/back ...). But in fact, in WMS, we can
   perform the same thing too (we will use it, next).
 
-###2.3. Frame shadow:
+### 2.3. Frame shadow:
 
 - By custom drawing the Decor background and changing predefined
   template, we can add shadow (current implementation). But we
@@ -155,7 +155,7 @@
   it will display half-transparent video. We can mix an opaque
   stream (e.g. background color) to solve this issue temporarily.
 
-###2.4. Popup dialog:
+### 2.4. Popup dialog:
 
 - By limiting the WindowState in WMS, we can limit the dialog
   window size and position. But now, we still limit the dialog
@@ -165,7 +165,7 @@
   all window operation when application window has pop up
   dialog. But our current implementation has bugs to be fix.
 
-###2.5. Show/Hide automatically:
+### 2.5. Show/Hide automatically:
 
 - By View.setVisibility method, we can dynamically show/hide the
   window header layout, when toggle maximize/restore application
@@ -178,7 +178,7 @@
   header display in front of the application window's original
   header, when maximized.
 
-###3. Current status:
+### 3. Current status:
 
 - Finish window header and frame (100%), also include each special
   cases, e.g.  QQ, WeChat, and WanDouJia.
